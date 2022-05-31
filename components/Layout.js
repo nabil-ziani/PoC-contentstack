@@ -35,7 +35,7 @@ export default function Layout(props) {
         body {
           font-family: "Open Sans", sans-serif;
         }
-        #asdf4534 {
+        main {
           width: 100%;
           margin: 0 auto;
         }

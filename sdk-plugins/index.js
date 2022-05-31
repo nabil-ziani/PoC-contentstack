@@ -61,18 +61,17 @@ export default {
       );
     });
   },
-  getSpecificEntryWihtRef(ctUid, entryUrl, ref, locale) {
+  getSpecificEntryWithRef(ctUid, entryUrl, ref, locale) {
     return new Promise((resolve, reject) => {
+
       const blogQuery = Stack.ContentType(ctUid)
         .Query()
         .language(locale)
         .includeReference(ref)
         .toJSON();
-        console.log(entryUrl)
       const data = blogQuery.where("url", `${entryUrl}`).find();
       data.then(
         (result) => {
-          console.log(result)
           resolve(result[0]);
         },
         (error) => {
