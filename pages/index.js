@@ -16,7 +16,10 @@ export async function getStaticProps(context) {
     const header = await Stack.getEntry('header', "en-us");
     const footer = await Stack.getEntry('footer', "en-us");
 
-    return { props: {result: result[0][0], header: header[0][0], footer: footer[0][0]} };
+    return { 
+      props: {result: result[0][0], header: header[0][0], footer: footer[0][0]},
+      revalidate: 1
+    };
   } catch (error) {
     console.error(error);
   }
